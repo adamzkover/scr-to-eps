@@ -1,0 +1,172 @@
+{
+    "resourceType": "Condition",
+    "id": "1480f4a0-0e23-41f5-9c9f-5dd2e2580dc8",
+    "meta": {
+        "versionId": "2",
+        "lastUpdated": "2021-04-26T11:15:17.955+02:00",
+        "profile": [
+            "http://nhn.no/kj/fhir/StructureDefinition/KjConditionCriticalMedicalCondition"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "PractitionerRole",
+            "id": "updaterRef",
+            "practitioner": {
+                "identifier": {
+                    "system": "urn:oid:2.16.578.1.12.4.1.4.4",
+                    "value": "222200063"
+                },
+                "display": "GRØNN VITS"
+            },
+            "organization": {
+                "identifier": {
+                    "system": "urn:oid:2.16.578.1.12.4.1.4.101",
+                    "value": "500000003"
+                },
+                "display": "Nykter legekontor"
+            },
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://nhn.no/kj/fhir/CodeSystem/CategoriesOfHealthProfessionals",
+                            "code": "LE",
+                            "display": "Lege"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "resourceType": "PractitionerRole",
+            "id": "recorderRef",
+            "practitioner": {
+                "identifier": {
+                    "system": "urn:oid:2.16.578.1.12.4.1.4.4",
+                    "value": "565510101"
+                },
+                "display": "ORDENTLIG FYRSTIKK"
+            },
+            "organization": {
+                "identifier": {
+                    "system": "urn:oid:2.16.578.1.12.4.1.4.101",
+                    "value": "323232323"
+                },
+                "display": "Norsk Helsenett SF Høgronden Testsykehus"
+            },
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://nhn.no/kj/fhir/CodeSystem/CategoriesOfHealthProfessionals",
+                            "code": "LE",
+                            "display": "Lege"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "extension": [
+        {
+            "url": "http://nhn.no/kj/fhir/StructureDefinition/KjUpdater",
+            "valueReference": {
+                "reference": "#updaterRef"
+            }
+        },
+        {
+            "url": "http://nhn.no/kj/fhir/StructureDefinition/KjUpdatedDateTime",
+            "valueDateTime": "2021-04-26T11:15:17+02:00"
+        },
+        {
+            "url": "http://nhn.no/kj/fhir/StructureDefinition/KjSourceOfInformation",
+            "valueCoding": {
+                "system": "http://nhn.no/kj/fhir/CodeSystem/SourceOfInformation",
+                "code": "7",
+                "display": "Opplyst av ansvarlig behandler"
+            }
+        }
+    ],
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active",
+                "display": "Active"
+            }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed",
+                "display": "Confirmed"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://nhn.no/kj/fhir/CodeSystem/SubcategoriesOfCriticalInformation",
+                    "code": "5",
+                    "display": "Kritisk medisinsk tilstand"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://nhn.no/kj/fhir/CodeSystem/ICD-10",
+                "code": "Q87.4",
+                "display": "Marfans syndrom",
+                "userSelected": true
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://nhn.no/kj/fhir/StructureDefinition/CodeInfoText",
+                        "valueReference": {
+                            "reference": "Medfødt bindevevssykdom med svekkelse av kollagen. Kan bl.a medføre forandringer i hjerte-karsystemet. Økt risiko for utvidelse av og ruptur av hovedpulsåren og løse øyelinser."
+                        }
+                    },
+                    {
+                        "url": "http://nhn.no/kj/fhir/StructureDefinition/UrlMoreInformation",
+                        "valueReference": {
+                            "reference": "http://www.helsebiblioteket.no/sok?q=Marfans+syndrom"
+                        }
+                    }
+                ],
+                "system": "http://nhn.no/kj/fhir/CodeSystem/CriticalMedicalConditionAbsoluteList",
+                "code": "4",
+                "display": "Marfans syndrom",
+                "userSelected": false
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/07705691643"
+    },
+    "onsetDateTime": "2021-04-15T00:00:00+02:00",
+    "recordedDate": "2021-04-06T15:56:35+02:00",
+    "recorder": {
+        "reference": "#recorderRef"
+    },
+    "evidence": [
+        {
+            "code": [
+                {
+                    "text": "Akutt bakteriell rhinosinusitt (ABRS) "
+                }
+            ]
+        }
+    ],
+    "note": [
+        {
+            "text": "Operert x 5 på Rikshospitalet"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+<Resept xmlns="http://www.kith.no/xmlstds/eresept/m1/2013-10-08">
+    <Forskrivningsdato>2026-10-15</Forskrivningsdato>
+    <Utloper>2027-10-14</Utloper>
+    <ReseptDokLegemiddel>
+        <Varegruppekode DN="Legemiddel" V="L"/>
+        <Antall>1</Antall>
+        <RefHjemmel DN="§5-14 §2" V="200" S="2.16.578.1.12.4.1.1.7427" OT="Viser til legemidler med forhåndsgodkjent refusjon, oppført i refusjonslisten"/>
+        <RefKode DN="Migrene" V="G43" S="2.16.578.1.12.4.1.1.7435"/>
+        <Reiterasjon>3</Reiterasjon>
+        <Forskrivning xmlns="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08">
+            <Bruksomrade>MOT MIGRENE</Bruksomrade>
+            <DosVeiledEnkel>1 tablett morgen og 1 tablett kveld daglig</DosVeiledEnkel>
+            <Bruk DN="Fast" V="1"/>
+            <Dosering>
+                <Starttidspunkt V="2026-10-15"/>
+                <DoseFastTidspunkt>
+                    <Mengde V="1" U="tablett"/>
+                    <Intervall V="1" U="Døgn"/>
+                    <Tidsomrade DN="Morgen" V="1"/>
+                    <GisEksakt>false</GisEksakt>
+                </DoseFastTidspunkt>
+                <DoseFastTidspunkt>
+                    <Mengde V="1" U="tablett"/>
+                    <Intervall V="1" U="Døgn"/>
+                    <Tidsomrade DN="Kveld" V="5"/>
+                    <GisEksakt>false</GisEksakt>
+                </DoseFastTidspunkt>
+            </Dosering>
+            <Legemiddelpakning>
+                <Atc V="N02CC02" S="2.16.578.1.12.4.1.1.7180" DN="Naratriptan"/>
+                <NavnFormStyrke>Naramig tab 2,5 mg</NavnFormStyrke>
+                <Reseptgruppe V="C" DN="Reseptgruppe C"/>
+                <LegemiddelformKort V="53" S="2.16.578.1.12.4.1.1.7448" DN="Tablett"/>
+                <Varenr>090031</Varenr>
+                <PakningsinfoResept>
+                    <Varenavn>Naramig</Varenavn>
+                    <Pakningsstr>18</Pakningsstr>
+                    <EnhetPakning V="stk" S="2.16.578.1.12.4.1.1.7452" DN="stykk"/>
+                </PakningsinfoResept>
+            </Legemiddelpakning>
+        </Forskrivning>
+    </ReseptDokLegemiddel>
+    <OppdatertFest>2026-10-08T14:02:49</OppdatertFest>
+</Resept>

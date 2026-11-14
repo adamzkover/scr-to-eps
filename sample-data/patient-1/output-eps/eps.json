@@ -1,0 +1,422 @@
+{
+  "resourceType": "Bundle",
+  "id": "1214ce4e-65f7-46fc-96e4-d40aa665959a",
+  "meta": {
+    "profile": [ "http://hl7.eu/fhir/eps/StructureDefinition/bundle-eu-eps" ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:1214ce4e-65f7-46fc-96e4-d40aa665959a"
+  },
+  "type": "document",
+  "timestamp": "2026-11-14T15:29:26.082+01:00",
+  "entry": [ {
+    "fullUrl": "urn:uuid:7bda4de8-10d9-42ff-b674-edb4d26e8069",
+    "resource": {
+      "resourceType": "Composition",
+      "id": "7bda4de8-10d9-42ff-b674-edb4d26e8069",
+      "meta": {
+        "profile": [ "http://hl7.eu/fhir/eps/StructureDefinition/composition-eu-eps" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">EPS Composition</div>"
+      },
+      "identifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:uuid:7bda4de8-10d9-42ff-b674-edb4d26e8069"
+      },
+      "status": "final",
+      "type": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "60591-5",
+          "display": "Patient summary Document"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:b644e9d5-11ff-46eb-825b-5cd47aaac7f4"
+      },
+      "date": "2026-11-14T15:29:26+01:00",
+      "author": [ {
+        "display": "SCR-to-EPS"
+      } ],
+      "title": "European Patient Summary",
+      "section": [ {
+        "title": "Problem List",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "11450-4",
+            "display": "Problem list - Reported"
+          } ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><strong>Clinical status:</strong> Active (active)</p><p><strong>Verification status:</strong> Confirmed (confirmed)</p><p><strong>Category:</strong> Kritisk medisinsk tilstand (5)</p><p><strong>Category:</strong> Problem list item (problem-list-item)</p><p><strong>Condition:</strong> Q87.4 (Q87.4)</p><p><strong>Onset:</strong> 2021-04-15T00:00:00+02:00</p><p><strong>Recorded date:</strong> 2021-04-06T15:56:35+02:00</p><p><strong>Evidence:</strong> Akutt bakteriell rhinosinusitt (ABRS)</p><p><strong>Note:</strong> Operert x 5 på Rikshospitalet</p></div>"
+        },
+        "entry": [ {
+          "reference": "urn:uuid:6eda34f0-68ac-45d4-98a3-865a57c6a225"
+        } ]
+      }, {
+        "title": "Allergies",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "48765-2",
+            "display": "Allergies and adverse reactions Document"
+          } ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><strong>Clinical status:</strong> Active (active)</p><p><strong>Verification status:</strong> Confirmed (confirmed)</p><p><strong>Category:</strong> Medication (medication)</p><p><strong>Criticality:</strong> High (high)</p><p><strong>Allergen:</strong> Penimepicycline (J01AA10)</p><p><strong>Onset:</strong> 2021-07-17T00:00:00Z</p><p><strong>Manifestation:</strong> Anaphylaxis (39579001)</p></div>"
+        },
+        "entry": [ {
+          "reference": "urn:uuid:9d5de8eb-94c7-4465-954c-e2a700e05032"
+        } ]
+      }, {
+        "title": "Medications",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "10160-0",
+            "display": "History of Medication use Narrative"
+          } ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication 'Naramig tab 2,5 mg'</p><p>ATC code: N02CC02</p><p>SNOMED CT code: 322827001 (Naratriptan (as naratriptan hydrochloride) 2.5 mg oral tablet)</p></div>"
+        },
+        "entry": [ {
+          "reference": "urn:uuid:c30080df-493d-4d80-88f2-f27f2e795f1d"
+        } ]
+      }, {
+        "title": "Immunizations",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "11369-6",
+            "display": "History of Immunization note"
+          } ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This section is empty.</div>"
+        },
+        "emptyReason": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code": "notstarted",
+            "display": "Not Started"
+          } ]
+        }
+      }, {
+        "title": "Results",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "30954-2",
+            "display": "Relevant diagnostic tests/laboratory data note"
+          } ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This section is empty.</div>"
+        },
+        "emptyReason": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code": "notstarted",
+            "display": "Not Started"
+          } ]
+        }
+      }, {
+        "title": "Procedures",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "47519-4",
+            "display": "History of Procedures Document"
+          } ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This section is empty.</div>"
+        },
+        "emptyReason": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code": "notstarted",
+            "display": "Not Started"
+          } ]
+        }
+      }, {
+        "title": "Medical Devices",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "46264-8",
+            "display": "History of medical device use"
+          } ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This section is empty.</div>"
+        },
+        "emptyReason": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code": "notstarted",
+            "display": "Not Started"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:b644e9d5-11ff-46eb-825b-5cd47aaac7f4",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "b644e9d5-11ff-46eb-825b-5cd47aaac7f4",
+      "meta": {
+        "profile": [ "http://hl7.eu/fhir/eps/StructureDefinition/patient-eu-eps" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Patient Gry Telokk</div>"
+      },
+      "identifier": [ {
+        "system": "urn:oid:2.16.578.1.12.4.1.4.1",
+        "value": "06768226421"
+      } ],
+      "name": [ {
+        "text": "Gry Telokk"
+      } ],
+      "gender": "female",
+      "birthDate": "1982-11-06"
+    }
+  }, {
+    "fullUrl": "urn:uuid:9d5de8eb-94c7-4465-954c-e2a700e05032",
+    "resource": {
+      "resourceType": "AllergyIntolerance",
+      "id": "9d5de8eb-94c7-4465-954c-e2a700e05032",
+      "meta": {
+        "profile": [ "http://hl7.eu/fhir/base/StructureDefinition/allergyIntolerance-eu-core" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><strong>Clinical status:</strong> Active (active)</p><p><strong>Verification status:</strong> Confirmed (confirmed)</p><p><strong>Category:</strong> Medication (medication)</p><p><strong>Criticality:</strong> High (high)</p><p><strong>Allergen:</strong> Penimepicycline (J01AA10)</p><p><strong>Onset:</strong> 2021-07-17T00:00:00Z</p><p><strong>Manifestation:</strong> Anaphylaxis (39579001)</p></div>"
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "category": [ "medication" ],
+      "criticality": "high",
+      "code": {
+        "coding": [ {
+          "system": "http://www.whocc.no/atc",
+          "code": "J01AA10",
+          "display": "Penimepicycline"
+        } ]
+      },
+      "patient": {
+        "reference": "urn:uuid:b644e9d5-11ff-46eb-825b-5cd47aaac7f4"
+      },
+      "onsetDateTime": "2021-07-17T00:00:00Z",
+      "recordedDate": "2021-07-17T15:01:02+02:00",
+      "note": [ {
+        "text": "Akutt hevelse i tunge og svelg, tiltagende pusteproblemer, kvalme og abdominale smerter."
+      } ],
+      "reaction": [ {
+        "manifestation": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "39579001",
+            "display": "Anaphylaxis"
+          } ]
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:6eda34f0-68ac-45d4-98a3-865a57c6a225",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "6eda34f0-68ac-45d4-98a3-865a57c6a225",
+      "meta": {
+        "profile": [ "http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><strong>Clinical status:</strong> Active (active)</p><p><strong>Verification status:</strong> Confirmed (confirmed)</p><p><strong>Category:</strong> Kritisk medisinsk tilstand (5)</p><p><strong>Category:</strong> Problem list item (problem-list-item)</p><p><strong>Condition:</strong> Q87.4 (Q87.4)</p><p><strong>Onset:</strong> 2021-04-15T00:00:00+02:00</p><p><strong>Recorded date:</strong> 2021-04-06T15:56:35+02:00</p><p><strong>Evidence:</strong> Akutt bakteriell rhinosinusitt (ABRS)</p><p><strong>Note:</strong> Operert x 5 på Rikshospitalet</p></div>"
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://nhn.no/kj/fhir/CodeSystem/SubcategoriesOfCriticalInformation",
+          "code": "5",
+          "display": "Kritisk medisinsk tilstand"
+        } ]
+      }, {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "problem-list-item"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "Q87.4"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:b644e9d5-11ff-46eb-825b-5cd47aaac7f4"
+      },
+      "onsetDateTime": "2021-04-15T00:00:00+02:00",
+      "recordedDate": "2021-04-06T15:56:35+02:00",
+      "evidence": [ {
+        "code": [ {
+          "text": "Akutt bakteriell rhinosinusitt (ABRS) "
+        } ]
+      } ],
+      "note": [ {
+        "text": "Operert x 5 på Rikshospitalet"
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:c30080df-493d-4d80-88f2-f27f2e795f1d",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "id": "c30080df-493d-4d80-88f2-f27f2e795f1d",
+      "meta": {
+        "profile": [ "http://hl7.eu/fhir/eps/StructureDefinition/MedicationStatement-eu-eps" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication 'Naramig tab 2,5 mg'</p><p>ATC code: N02CC02</p><p>SNOMED CT code: 322827001 (Naratriptan (as naratriptan hydrochloride) 2.5 mg oral tablet)</p></div>"
+      },
+      "status": "active",
+      "medicationReference": {
+        "reference": "urn:uuid:c6f4d5f9-3e0d-43b0-ba1a-c5c419850a8e"
+      },
+      "subject": {
+        "reference": "urn:uuid:b644e9d5-11ff-46eb-825b-5cd47aaac7f4"
+      },
+      "effectiveDateTime": "2026-11-14T15:29:26+01:00",
+      "dosage": [ {
+        "text": "1 tablett morgen og 1 tablett kveld daglig"
+      }, {
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2026-10-15"
+            },
+            "when": [ "MORN" ]
+          }
+        },
+        "doseAndRate": [ {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "{tbl}",
+            "system": "http://unitsofmeasure.org",
+            "code": "{tbl}"
+          },
+          "rateQuantity": {
+            "value": 1,
+            "unit": "d",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+          }
+        } ]
+      }, {
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2026-10-15"
+            },
+            "when": [ "EVE" ]
+          }
+        },
+        "doseAndRate": [ {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "{tbl}",
+            "system": "http://unitsofmeasure.org",
+            "code": "{tbl}"
+          },
+          "rateQuantity": {
+            "value": 1,
+            "unit": "d",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+          }
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:c6f4d5f9-3e0d-43b0-ba1a-c5c419850a8e",
+    "resource": {
+      "resourceType": "Medication",
+      "id": "c6f4d5f9-3e0d-43b0-ba1a-c5c419850a8e",
+      "meta": {
+        "profile": [ "http://hl7.eu/fhir/base/StructureDefinition/medication-eu-core" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication 'Naramig tab 2,5 mg'</p><p>ATC code: N02CC02</p><p>SNOMED CT code: 322827001 (Naratriptan (as naratriptan hydrochloride) 2.5 mg oral tablet)</p></div>"
+      },
+      "extension": [ {
+        "url": "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-classification",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://www.whocc.no/atc",
+            "code": "N02CC02"
+          } ]
+        }
+      }, {
+        "url": "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-productname",
+        "valueString": "Naramig tab 2,5 mg"
+      } ],
+      "identifier": [ {
+        "system": "https://farmalogg.no/varenummer",
+        "value": "090031"
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "322827001",
+          "display": "Naratriptan (as naratriptan hydrochloride) 2.5 mg oral tablet"
+        } ]
+      },
+      "form": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "421026006",
+          "display": "Oral tablet"
+        } ]
+      }
+    }
+  } ]
+}
