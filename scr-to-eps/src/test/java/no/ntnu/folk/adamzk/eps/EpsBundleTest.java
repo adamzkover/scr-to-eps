@@ -24,6 +24,7 @@ import no.ntnu.folk.adamzk.scr.M1Parser;
 import no.ntnu.folk.adamzk.scr.ScrAllergyIntoleranceConverter;
 import no.ntnu.folk.adamzk.scr.ScrCriticalMedicalConditionConverter;
 import no.ntnu.folk.adamzk.scr.ScrProfiles;
+import no.ntnu.folk.adamzk.scr.ScrProcedureConverter;
 
 class EpsBundleTest {
 
@@ -54,7 +55,8 @@ class EpsBundleTest {
                 DocumentBuilderFactory.newInstance(),
                 new M1Parser(),
                 new ScrAllergyIntoleranceConverter(),
-                new ScrCriticalMedicalConditionConverter())
+                new ScrCriticalMedicalConditionConverter(),
+                new ScrProcedureConverter())
                 .createBundle()
                 .withComposition(EpsComposition.newInstance().createComposition().addEmptySections().toResource())
                 .withPatient(temporaryDirectory)

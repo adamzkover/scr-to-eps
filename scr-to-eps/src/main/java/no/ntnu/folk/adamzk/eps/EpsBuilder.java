@@ -14,6 +14,7 @@ import no.ntnu.folk.adamzk.FhirHelper;
 import no.ntnu.folk.adamzk.scr.M1Parser;
 import no.ntnu.folk.adamzk.scr.ScrAllergyIntoleranceConverter;
 import no.ntnu.folk.adamzk.scr.ScrCriticalMedicalConditionConverter;
+import no.ntnu.folk.adamzk.scr.ScrProcedureConverter;
 
 @Component
 public class EpsBuilder {
@@ -31,6 +32,7 @@ public class EpsBuilder {
     private final M1Parser m1Parser;
     private final ScrAllergyIntoleranceConverter scrAllergyIntoleranceConverter;
     private final ScrCriticalMedicalConditionConverter scrCriticalMedicalConditionConverter;
+    private final ScrProcedureConverter scrProcedureConverter;
 
     public EpsBuilder(
             FhirContext fhirContext,
@@ -38,13 +40,15 @@ public class EpsBuilder {
             DocumentBuilderFactory documentBuilderFactory,
             M1Parser m1Parser,
             ScrAllergyIntoleranceConverter scrAllergyIntoleranceConverter,
-            ScrCriticalMedicalConditionConverter scrCriticalMedicalConditionConverter) {
+            ScrCriticalMedicalConditionConverter scrCriticalMedicalConditionConverter,
+            ScrProcedureConverter scrProcedureConverter) {
         this.fhirContext = fhirContext;
         this.fhirHelper = fhirHelper;
         this.documentBuilderFactory = documentBuilderFactory;
         this.m1Parser = m1Parser;
         this.scrAllergyIntoleranceConverter = scrAllergyIntoleranceConverter;
         this.scrCriticalMedicalConditionConverter = scrCriticalMedicalConditionConverter;
+        this.scrProcedureConverter = scrProcedureConverter;
     }
 
     public void buildEps(Path directory) {
@@ -53,7 +57,7 @@ public class EpsBuilder {
 
         Bundle bundle = EpsBundle
                 .newInstance(fhirContext, documentBuilderFactory,
-                        m1Parser, scrAllergyIntoleranceConverter, scrCriticalMedicalConditionConverter)
+                        m1Parser, scrAllergyIntoleranceConverter, scrCriticalMedicalConditionConverter, scrProcedureConverter)
                 .createBundle()
                 .withComposition(EpsComposition
                         .newInstance()

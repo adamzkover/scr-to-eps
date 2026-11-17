@@ -24,6 +24,10 @@ public class TerminologyService {
 
     public static final String SCR_ICD_10_SYSTEM = "http://nhn.no/kj/fhir/CodeSystem/ICD-10";
 
+    public static final String SCR_PROCEDURE_CODE_SYSTEM = "http://nhn.no/kj/fhir/CodeSystem/OngoingTreatment";
+
+    public static final String SCR_SUBCATEGORIES_OF_CRITICAL_INFORMATION_SYSTEM = "http://nhn.no/kj/fhir/CodeSystem/SubcategoriesOfCriticalInformation";
+
     private static Map<String, Coding> terminologyMap = new HashMap<>();
 
     private static Map<String, String> unitMap = new HashMap<>();
@@ -49,6 +53,12 @@ public class TerminologyService {
                 .setCode("39579001")
                 .setDisplay("Anaphylaxis")
         );
+
+        // SCR Procedure Codes
+        terminologyMap.put("http://nhn.no/kj/fhir/CodeSystem/OngoingTreatment|6",
+                new Coding().setSystem(SNOMED_CT_SYSTEM)
+                .setCode("266707007")
+                .setDisplay("Drug addiction therapy"));
 
         // Medication
         terminologyMap.put("https://farmalogg.no/varenummer|090031",

@@ -1,0 +1,88 @@
+{
+    "resourceType": "Procedure",
+    "id": "fbf414a9-651f-4965-9ae4-58b3c6baef33",
+    "meta": {
+        "versionId": "1",
+        "lastUpdated": "2021-03-14T12:43:58.413+01:00",
+        "profile": [
+            "http://nhn.no/kj/fhir/StructureDefinition/KjProcedure"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "PractitionerRole",
+            "id": "recorderRef",
+            "practitioner": {
+                "identifier": {
+                    "system": "urn:oid:2.16.578.1.12.4.1.4.4",
+                    "value": "565501872"
+                },
+                "display": "GRØNN VITS"
+            },
+            "organization": {
+                "identifier": {
+                    "system": "urn:oid:2.16.578.1.12.4.1.4.101",
+                    "value": "500000003"
+                },
+                "display": "Nykter legekontor"
+            },
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://nhn.no/kj/fhir/CodeSystem/CategoriesOfHealthProfessionals",
+                            "code": "LE",
+                            "display": "Lege"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "extension": [
+        {
+            "url": "http://nhn.no/kj/fhir/StructureDefinition/KjRecordedDateTime",
+            "valueDateTime": "2021-03-14T12:43:58+01:00"
+        },
+        {
+            "url": "http://nhn.no/kj/fhir/StructureDefinition/KjSourceOfInformation",
+            "valueCoding": {
+                "system": "http://nhn.no/kj/fhir/CodeSystem/SourceOfInformation",
+                "code": "2",
+                "display": "Observert av registrerende helsepersonell"
+            }
+        }
+    ],
+    "status": "in-progress",
+    "category": {
+        "coding": [
+            {
+                "system": "http://nhn.no/kj/fhir/CodeSystem/SubcategoriesOfCriticalInformation",
+                "code": "6",
+                "display": "Behandling"
+            }
+        ]
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://nhn.no/kj/fhir/CodeSystem/OngoingTreatment",
+                "code": "6",
+                "display": "LAR (Legemiddelassistert rehabilitering)"
+            }
+        ],
+        "text": "Metadon"
+    },
+    "subject": {
+        "reference": "Patient/07705691643"
+    },
+    "performedDateTime": "2021-03-09T00:00:00+01:00",
+    "recorder": {
+        "reference": "#recorderRef"
+    },
+    "note": [
+        {
+            "text": "Daglig dose fra apotek"
+        }
+    ]
+}

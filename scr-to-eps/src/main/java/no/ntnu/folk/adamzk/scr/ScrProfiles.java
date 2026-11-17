@@ -12,4 +12,14 @@ public class ScrProfiles {
      */
     public static final String CRITICAL_MEDICAL_CONDITION_PROFILE = "http://nhn.no/kj/fhir/StructureDefinition/KjConditionCriticalMedicalCondition";
 
+    /**
+     * The SCR Procedure profile.
+     */
+    public static final String PROCEDURE_PROFILE = "http://nhn.no/kj/fhir/StructureDefinition/KjProcedure";
+
+    /**
+     * The Recorded Date Extension in the SCR Procedure.
+     */
+    public static final String EXT_PROCEDURE_RECORDED_DATE = "http://nhn.no/kj/fhir/StructureDefinition/KjRecordedDateTime";
+
 }

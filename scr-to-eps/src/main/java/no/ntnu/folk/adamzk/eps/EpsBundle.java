@@ -28,6 +28,7 @@ import org.hl7.fhir.r4.model.Identifier;
 import org.hl7.fhir.r4.model.MedicationStatement;
 import org.hl7.fhir.r4.model.Narrative;
 import org.hl7.fhir.r4.model.Patient;
+import org.hl7.fhir.r4.model.Procedure;
 import org.hl7.fhir.r4.model.Reference;
 import org.hl7.fhir.r4.model.Resource;
 import org.joox.Match;
@@ -42,6 +43,7 @@ import ca.uhn.fhir.parser.DataFormatException;
 import no.ntnu.folk.adamzk.scr.M1Parser;
 import no.ntnu.folk.adamzk.scr.ScrAllergyIntoleranceConverter;
 import no.ntnu.folk.adamzk.scr.ScrCriticalMedicalConditionConverter;
+import no.ntnu.folk.adamzk.scr.ScrProcedureConverter;
 import no.ntnu.folk.adamzk.scr.ScrProfiles;
 import no.ntnu.folk.adamzk.terminology.TerminologyService;
 
@@ -55,26 +57,31 @@ public final class EpsBundle {
     private final M1Parser m1Parser;
     private final ScrAllergyIntoleranceConverter scrAllergyIntoleranceConverter;
     private final ScrCriticalMedicalConditionConverter scrCriticalMedicalConditionConverter;
+    private final ScrProcedureConverter scrProcedureConverter;
 
     private Bundle bundle;
 
     private EpsBundle(FhirContext fhirContext, DocumentBuilderFactory documentBuilderFactory,
         M1Parser m1Parser, ScrAllergyIntoleranceConverter scrAllergyIntoleranceConverter,
-        ScrCriticalMedicalConditionConverter scrCriticalMedicalConditionConverter) {
+        ScrCriticalMedicalConditionConverter scrCriticalMedicalConditionConverter,
+        ScrProcedureConverter scrProcedureConverter) {
         this.fhirContext = Objects.requireNonNull(fhirContext, "fhirContext");
         this.documentBuilderFactory = Objects.requireNonNull(documentBuilderFactory, "documentBuilderFactory");
         this.m1Parser = Objects.requireNonNull(m1Parser, "m1Parser");
         this.scrAllergyIntoleranceConverter = Objects.requireNonNull(scrAllergyIntoleranceConverter, "scrAllergyIntoleranceConverter");
         this.scrCriticalMedicalConditionConverter = Objects.requireNonNull(scrCriticalMedicalConditionConverter, "scrCriticalMedicalConditionConverter");
+        this.scrProcedureConverter = Objects.requireNonNull(scrProcedureConverter, "scrProcedureConverter");
     }
 
     public static EpsBundle newInstance(
             FhirContext fhirContext, DocumentBuilderFactory documentBuilderFactory, M1Parser m1Parser,
             ScrAllergyIntoleranceConverter scrAllergyIntoleranceConverter,
-            ScrCriticalMedicalConditionConverter scrCriticalMedicalConditionConverter) {
+            ScrCriticalMedicalConditionConverter scrCriticalMedicalConditionConverter,
+            ScrProcedureConverter scrProcedureConverter) {
         return new EpsBundle(fhirContext, documentBuilderFactory, m1Parser,
             scrAllergyIntoleranceConverter,
-            scrCriticalMedicalConditionConverter);
+            scrCriticalMedicalConditionConverter,
+            scrProcedureConverter);
     }
 
     public Bundle toResource() {
@@ -214,6 +221,12 @@ public final class EpsBundle {
             medicationsSection.addEntry(new Reference(entry.getFullUrl()));
             appendResourceText(medicationsSection, medicationStatement);
             medicationsSection.setEmptyReason(null);
+        } else if (resource instanceof Procedure procedure) {
+            procedure.setSubject(getPatientReference());
+            Composition.SectionComponent proceduresSection = getCompositionSection(EpsSection.PROCEDURES.getCode());
+            proceduresSection.addEntry(new Reference(entry.getFullUrl()));
+            appendResourceText(proceduresSection, procedure);
+            proceduresSection.setEmptyReason(null);
         }
     }
 
@@ -273,6 +286,11 @@ public final class EpsBundle {
             if (conditionResource.getMeta().hasProfile(ScrProfiles.CRITICAL_MEDICAL_CONDITION_PROFILE)) {
                 Condition epsCondition = scrCriticalMedicalConditionConverter.parse(conditionResource);
                 resources.add(epsCondition);
+            }
+        } else if (resource instanceof Procedure procedureResource) {
+            if (procedureResource.getMeta().hasProfile(ScrProfiles.PROCEDURE_PROFILE)) {
+                Procedure epsProcedure = scrProcedureConverter.convert(procedureResource);
+                resources.add(epsProcedure);
             }
         }
 

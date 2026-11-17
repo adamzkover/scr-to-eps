@@ -42,24 +42,11 @@ mvn spring-boot:run -Psyntpop \
 
 The `validate.sh` script shows how to use the [FHIR Valudator](https://hl7.org/fhir/validator/) from HL7 to validate the EPS.
 The `FHIR_VALIDATOR_JAR` environment variable should be set to the location of the validator JAR file.
-The implementation guides specified in the `-ig` parameters can be downloaded from the [HL7 FHIR Package Registry](https://registry.fhir.org/):
-
-* hl7.fhir.eu.eps version 1.0.0-ballot
-* hl7.fhir.uv.ips version 2.0.0
-* hl7.fhir.eu.base version 2.0.0
-* hl7.fhir.uv.xver-r5.r4 version 0.1.0
-* hl7.fhir.eu.extensions.r4 version 1.3.0
-* ihe.pharm.mpd.r4 version 1.0.0-comment2
-
-To install with NPM, use
-
-```sh
-npm --registry https://packages.simplifier.net install hl7.fhir.eu.eps@1.0.0-ballot
-npm --registry https://packages.simplifier.net install hl7.fhir.uv.ips@2.0.0
-npm --registry https://packages.simplifier.net install hl7.fhir.eu.base@2.0.0
-npm --registry https://packages.simplifier.net install hl7.fhir.uv.xver-r5.r4@0.1.0
-npm --registry https://packages.simplifier.net install hl7.fhir.eu.extensions.r4@1.3.0
-npm --registry https://packages.simplifier.net install ihe.pharm.mpd.r4@1.0.0-comment2
-```
+The EPS implementation guide is specified in the `-ig` parameter with a fixed version.
+The validator downloads the IG and its dependencies and installs them to the local FHIR package cache.
 
 ## Validation of SCR
+
+Profiles are available on Simplifier: <https://simplifier.net/kjernejournalr4>.
+
+The PPS IG is at <https://hl7norway.github.io/NILAR/DiagnosticReportIG/CurrentBuild/index.html>.
